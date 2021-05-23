@@ -3,11 +3,10 @@ package Main;
 public abstract class Question {
 
     private String text;
-    private String type;
 
-    public Question(String someText, String aType) {
+    public Question(String someText) {
         text = someText;
-        type = aType;
+
     }
 
     public void askQuestion() {
@@ -18,6 +17,4 @@ public abstract class Question {
 
     public String getText() { return text; }
     public void setText(String sampleText) { text = sampleText; }
-    public String getType() { return type; }
-    public void setType(String newType) { type = newType; }
 }

@@ -4,8 +4,8 @@ public class TrueFalseQuestion extends Question {
 
     private boolean answer;
 
-    public TrueFalseQuestion(String questionText, String questionType, boolean anAnswer) {
-        super(questionText, questionType);
+    public TrueFalseQuestion(String questionText, boolean anAnswer) {
+        super(questionText);
         answer = anAnswer;
     }
 

@@ -8,12 +8,12 @@ public class MultipleChoiceQuestion extends Question {
     private ArrayList<String> correctAnswer = new ArrayList<>();
     private ArrayList<String> answers = new ArrayList<>();
 
-    public MultipleChoiceQuestion(String someText, String aType) {
-        super(someText, aType);
+    public MultipleChoiceQuestion(String someText) {
+        super(someText);
     }
 
     public MultipleChoiceQuestion(String someText, String aType, String anAnswer) {
-        super(someText, aType);
+        super(someText);
         correctAnswer.add(anAnswer);
     }
 
