@@ -1,29 +1,38 @@
 package Main;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MultipleChoiceQuestion extends Question {
 
-    private String correctAnswer;
-    private String[] possibleAnswers = new String[4];
+    private ArrayList<String> correctAnswer = new ArrayList<>();
+    private ArrayList<String> answers = new ArrayList<>();
+
+    public MultipleChoiceQuestion(String someText, String aType) {
+        super(someText, aType);
+    }
 
     public MultipleChoiceQuestion(String someText, String aType, String anAnswer) {
         super(someText, aType);
-        correctAnswer = anAnswer;
-    }
-
-    public void buildAnswers(String answerOne, String answerTwo, String answerThree, String answerFour) {
-        possibleAnswers[0] = answerOne;
-        possibleAnswers[1] = answerTwo;
-        possibleAnswers[2] = answerThree;
-        possibleAnswers[3] = answerFour;
+        correctAnswer.add(anAnswer);
     }
 
     @Override
     public void displayAnswers() {
-        for (int i = 0; i < possibleAnswers.length; i++) {
-            System.out.println(i + " - " + possibleAnswers[i]);
+        int i = 0;
+        for (String answer : answers) {
+            System.out.println(i + " - " + answer);
+            i++;
         }
     }
 
-    public String getCorrectAnswer() { return correctAnswer; }
-    public void setCorrectAnswer(String answer) { correctAnswer = answer; }
+    public ArrayList<String> getCorrectAnswer() { return correctAnswer; }
+    public void setCorrectAnswer(String ... someCorrectAnswers) {
+        correctAnswer.addAll(Arrays.asList(someCorrectAnswers));
+    }
+
+    public ArrayList<String> getAnswers() { return answers; }
+    public void setAnswers(String ... someAnswers) {
+        answers.addAll(Arrays.asList(someAnswers));
+    }
 }
